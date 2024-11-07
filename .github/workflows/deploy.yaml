@@ -38,9 +38,8 @@ jobs:
           try { rm target/index.html }
           ls target | get name
               | each { path relative-to target }
-              | prepend "<ul>"
-              | each { $"<li><a href=\"($in)\">($in)</a></li>" }
-              | append "</ul>" | str join "\n"
+              | each { $"<a href=\"($in)\">($in)<br>" }
+              | append "" | str join "\n"
               | save -f target/index.html
 
       - name: Upload
