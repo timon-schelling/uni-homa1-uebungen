@@ -36,7 +36,7 @@ jobs:
           nu ./compile-all.nu
 
           try { rm target/index.html }
-          ls target | get name
+          ls target | sort-by name -n | get name
               | each { path relative-to target }
               | each { $"<a href=\"($in)\">($in)<br>" }
               | append "" | str join "\n"
