@@ -38,8 +38,10 @@ jobs:
           try { rm target/index.html }
           ls target | sort-by name -n | get name
               | each { path relative-to target }
-              | each { $"<a href=\"($in)\">($in)<br>" }
-              | append "" | str join "\n"
+              | each { $"<a href=\"($in)\">($in | str replace -r '\.[^.]+$' '')<br>" }
+              | append ""
+              | prepend "<style> a { font-family: monospace; font-size: 1.5em; } </style>"
+              | str join "\n"
               | save -f target/index.html
 
       - name: Upload
