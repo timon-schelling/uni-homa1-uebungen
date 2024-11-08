@@ -40,7 +40,7 @@ jobs:
               | each { path relative-to target }
               | each { $"<a href=\"($in)\">($in | str replace -r '\.[^.]+$' '')<br>" }
               | append ""
-              | prepend "<style> a { font-family: monospace; font-size: 1.5em; } </style>"
+              | prepend "<style> a { font-family: monospace; font-size: 2.2em; } </style>"
               | str join "\n"
               | save -f target/index.html
 
