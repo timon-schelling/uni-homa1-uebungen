@@ -1,3 +1,6 @@
+#import "../template.typ": *
+#show: template
+
 #strong[Behauptung:] Für alle $n in bb(N)$ ist $n^3 + 5 n$ durch $6$
 teilbar.
 

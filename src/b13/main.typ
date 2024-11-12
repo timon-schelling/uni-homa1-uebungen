@@ -1,3 +1,6 @@
+#import "../template.typ": *
+#show: template
+
 #strong[Aufgabe:]
 
 Geben Sie für die Menge

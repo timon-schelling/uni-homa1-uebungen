@@ -1,3 +1,6 @@
+#import "../template.typ": *
+#show: template
+
 #strong[Problemstellung:]
 
 Ein Schuhverkäufer behauptet mittels vollständiger Induktion zu

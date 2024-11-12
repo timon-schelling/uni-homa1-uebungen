@@ -1,3 +1,6 @@
+#import "../template.typ": *
+#show: template
+
 #strong[Aufgabe:]
 
 (a) Zeigen Sie, dass die Summe und das Produkt beschränkter Funktionen

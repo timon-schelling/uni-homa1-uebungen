@@ -1,3 +1,6 @@
+#import "../template.typ": *
+#show: template
+
 #strong[Aufgabe:]
 
 Zeigen Sie nochmals, dass die Zahlenfolge

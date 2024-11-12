@@ -1,3 +1,6 @@
+#import "../template.typ": *
+#show: template
+
 #strong[Aufgabe:]
 
 Man beweise, dass die Zahlenfolge ${ b_n }_(n in bb(N))$ mit

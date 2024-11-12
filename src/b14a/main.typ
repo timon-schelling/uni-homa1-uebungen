@@ -1,3 +1,6 @@
+#import "../template.typ": *
+#show: template
+
 #strong[Behauptung:] Für alle $y in bb(R)$ gilt: $ lr(|y|) = sqrt(y^2) $
 
 #strong[Beweis:]

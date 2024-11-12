@@ -1,3 +1,6 @@
+#import "../template.typ": *
+#show: template
+
 #strong[Aufgabe:]
 
 Sei $n in bb(N)$. Zeigen Sie für beliebige reelle Zahlen

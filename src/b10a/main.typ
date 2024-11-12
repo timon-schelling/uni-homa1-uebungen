@@ -1,3 +1,6 @@
+#import "../template.typ": *
+#show: template
+
 #strong[Behauptung:] Für alle $n in bb(N)$ gilt: $ 6^n + n lt.eq 7^n $
 
 #strong[Beweis durch vollständige Induktion:]

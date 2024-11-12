@@ -1,3 +1,6 @@
+#import "../template.typ": *
+#show: template
+
 #strong[Aufgabe (b):]
 
 Zeigen Sie, dass die Summe und das Produkt streng monoton wachsender

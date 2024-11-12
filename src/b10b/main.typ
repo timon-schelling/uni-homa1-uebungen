@@ -1,3 +1,6 @@
+#import "../template.typ": *
+#show: template
+
 #strong[Behauptung:] Für alle $n in bb(N)$ gilt:
 $ sum_(k = 1)^n k (k - 1) = 1 / 3 (n - 1) n (n + 1) $
 
