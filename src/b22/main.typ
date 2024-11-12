@@ -1,130 +1,100 @@
 #import "../template.typ": *
 #show: template
 
-#heading(level: 2, numbering: none)[Lösung zu Teil (a)]
-<lösung-zu-teil-a>
-Gegeben ist die Zahlenfolge:
-$ a_n = frac((n + 3)^5 - n^5, (n + 1)^6 - n^6) , quad n in bb(N) . $
+#heading(level: 2, numbering: none)[Lösung]
+<lösung>
+Gegeben ist die Folge ${ a_n }_(n = 2)^oo$ mit
+$ a_n = frac(1, n^2 - n) , quad n gt.eq 2 . $
 
-Wir untersuchen das Verhalten von $a_n$ für $n arrow.r oo$.
+Wir zeigen, dass ${ a_n }$ eine Cauchy-Folge in $bb(R)$ ist. Dazu müssen
+wir zeigen:
+$ forall thin epsilon > 0 med exists thin N_0 in bb(N) med upright("so dass") med lr(|a_n - a_m|) < epsilon quad forall thin n , m > N_0 . $
 
-#strong[Berechnung des Grenzwerts:]
+#strong[Beweis:]
 
-Für große $n$ können wir die Differenzen im Zähler und Nenner
-approximieren: $ (n + 3)^5 - n^5 & approx 5 n^4 dot.op 3 ,\
-(n + 1)^6 - n^6 & approx 6 n^5 dot.op 1 . $
+Sei $epsilon > 0$ gegeben. Wir wollen $N_0 in bb(N)$ finden, so dass für
+alle $n , m > N_0$ gilt: $ lr(|a_n - a_m|) < epsilon . $
 
-Damit ergibt sich:
-$ a_n approx frac(5 n^4 dot.op 3, 6 n^5 dot.op 1) = frac(15 n^4, 6 n^5) = frac(15, 6 n) = frac(5, 2 n) . $
+Da $a_n > 0$ für alle $n gt.eq 2$ und ${ a_n }$ eine monoton fallende
+Folge ist (denn $n^2 - n$ wächst mit $n$), gilt:
+$ 0 < a_n lt.eq a_(N_0 + 1) quad upright("für alle ") n > N_0 . $
 
-Da $lim_(n arrow.r oo) frac(5, 2 n) = 0$, folgt:
-$ lim_(n arrow.r oo) a_n = 0 . $
+Wählen wir nun $N_0$ so, dass
+$ a_(N_0 + 1) = frac(1, (N_0 + 1)^2 - (N_0 + 1)) < epsilon / 2 . $
 
-#heading(level: 2, numbering: none)[Erklärung zu Teil (a)]
-<erklärung-zu-teil-a>
-Wir sollen untersuchen, ob die Folge
-$ a_n = frac((n + 3)^5 - n^5, (n + 1)^6 - n^6) $ konvergiert, und falls
-ja, ihren Grenzwert bestimmen.
+Da $a_n$ für wachsendes $n$ gegen $0$ konvergiert, ist dies immer
+möglich.
 
-#strong[Schritt 1: Verständnis der Differenzen]
+Für alle $n , m > N_0$ gilt dann:
+$ lr(|a_n - a_m|) & lt.eq lr(|a_n|) + lr(|a_m|)\
+ & < epsilon / 2 + epsilon / 2 = epsilon . $
 
-Die Ausdrücke $(n + 3)^5 - n^5$ und $(n + 1)^6 - n^6$ stellen
-Differenzen von Potenzen dar. Für große $n$ sind die höheren Potenzen
-von $n$ dominierend, sodass wir niedrigere Potenzen vernachlässigen
-können.
+Damit ist gezeigt, dass ${ a_n }$ eine Cauchy-Folge ist.
 
-#strong[Schritt 2: Anwendung der Binomialentwicklung]
+#heading(level: 2, numbering: none)[Erklärung]
+<erklärung>
+Wir sollen zeigen, dass die Folge ${ a_n }$ mit
+$ a_n = frac(1, n^2 - n) , quad n gt.eq 2 , $ eine Cauchy-Folge in den
+reellen Zahlen ist. Eine Folge ist genau dann eine Cauchy-Folge, wenn
+für jedes vorgegebene $epsilon > 0$ ein Index $N_0$ existiert, so dass
+für alle Glieder der Folge ab diesem Index die Differenz betragsmäßig
+kleiner als $epsilon$ ist:
+$ forall thin epsilon > 0 med exists thin N_0 in bb(N) med upright("so dass") med lr(|a_n - a_m|) < epsilon quad forall thin n , m > N_0 . $
 
-Wir verwenden die Binomialformel, um die höchsten Terme zu
-identifizieren:
-$ (n + k)^p & = n^p + p n^(p - 1) k + frac(p (p - 1), 2) n^(p - 2) k^2 + dots.h $
-Hierbei ist $k$ eine Konstante und $p$ der Exponent.
+#strong[Schritt 1: Verständnis der Folge]
 
-#strong[Schritt 3: Approximation der Differenzen]
+Die Folge ${ a_n }$ besteht aus positiven reellen Zahlen, da der Nenner
+$n^2 - n = n (n - 1)$ für $n gt.eq 2$ stets positiv ist. Zudem wächst
+der Nenner quadratisch mit $n$, wodurch die Werte von $a_n$ für
+zunehmendes $n$ immer kleiner werden. Tatsächlich konvergiert $a_n$
+gegen $0$.
 
-Für den Zähler: $ (n + 3)^5 - n^5 & approx 5 n^4 dot.op 3 = 15 n^4 . $
+#strong[Schritt 2: Zielsetzung]
 
-Für den Nenner: $ (n + 1)^6 - n^6 & approx 6 n^5 dot.op 1 = 6 n^5 . $
+Unser Ziel ist es, für ein gegebenes $epsilon > 0$ einen Index $N_0$ zu
+finden, ab dem die Differenz $lr(|a_n - a_m|)$ für alle $n , m > N_0$
+kleiner als $epsilon$ ist.
 
-#strong[Schritt 4: Vereinfachung des Quotienten]
+#strong[Schritt 3: Auswahl von $N_0$]
 
-Setzen wir die approximierten Werte ein:
-$ a_n approx frac(15 n^4, 6 n^5) = frac(15, 6 n) = frac(5, 2 n) . $
+Da $a_n$ gegen $0$ konvergiert, können wir $N_0$ so wählen, dass die
+Folgenglieder ab diesem Index betragsmäßig kleiner als $epsilon / 2$
+sind. Genauer gesagt, wählen wir $N_0$ so, dass
+$ a_(N_0 + 1) = frac(1, (N_0 + 1)^2 - (N_0 + 1)) < epsilon / 2 . $
 
-#strong[Schritt 5: Bestimmung des Grenzwerts]
+Dies ist möglich, weil $a_n$ für wachsendes $n$ beliebig klein wird.
 
-Da $frac(5, 2 n)$ für $n arrow.r oo$ gegen Null strebt, folgt:
-$ lim_(n arrow.r oo) a_n = 0 . $
+#strong[Schritt 4: Abschätzung der Differenz]
 
-#strong[Schlussfolgerung]
+Für alle $n , m > N_0$ gilt dann:
+$ lr(|a_n - a_m|) & lt.eq lr(|a_n|) + lr(|a_m|) &  & upright("(nach der Dreiecksungleichung)")\
+ & < epsilon / 2 + epsilon / 2 &  & upright("(da ") lr(|a_n|) , lr(|a_m|) < epsilon / 2 upright(")")\
+ & = epsilon . $
 
-Die Folge $a_n$ ist konvergent mit dem Grenzwert Null.
+#strong[Schritt 5: Schlussfolgerung]
 
-#heading(level: 2, numbering: none)[Lösung zu Teil (b)]
-<lösung-zu-teil-b>
-Gegeben ist die Zahlenfolge:
-$ b_n = frac(sqrt(n^2 + 1) - sqrt(n), root(3, n^3 + 2 n)) , quad n in bb(N) . $
+Da wir für beliebiges $epsilon > 0$ ein entsprechendes $N_0$ gefunden
+haben, sodass die Bedingung $lr(|a_n - a_m|) < epsilon$ für alle
+$n , m > N_0$ erfüllt ist, folgt, dass ${ a_n }$ eine Cauchy-Folge ist.
 
-Wir untersuchen das Verhalten von $b_n$ für $n arrow.r oo$.
+#strong[Zusätzliche Erklärung]
 
-#strong[Berechnung des Grenzwerts:]
+\- #emph[Dreiecksungleichung:] Diese Ungleichung besagt, dass für alle
+reellen Zahlen $x$ und $y$ gilt:
+$ lr(|x + y|) lt.eq lr(|x|) + lr(|y|) . $ Wir haben sie hier verwendet,
+um $lr(|a_n - a_m|)$ abzuschätzen.
 
-Zunächst rationalisieren wir den Zähler:
-$ sqrt(n^2 + 1) - sqrt(n) = frac((n^2 + 1) - n^2, sqrt(n^2 + 1) + sqrt(n)) = frac(1, sqrt(n^2 + 1) + sqrt(n)) . $
+\- #emph[Monotonie der Folge:] Die Folge ${ a_n }$ ist monoton fallend,
+weil der Nenner $n^2 - n$ mit steigendem $n$ wächst, wodurch der Wert
+von $a_n$ kleiner wird.
 
-Für große $n$ ist $sqrt(n^2 + 1) approx n$, somit:
-$ sqrt(n^2 + 1) + sqrt(n) approx n + sqrt(n) . $
+\- #emph[Konvergenz gegen Null:] Da $a_n$ gegen $0$ konvergiert, können
+wir sicherstellen, dass die Folgenglieder ab einem bestimmten Index
+beliebig klein werden.
 
-Der Zähler wird daher: $ frac(1, n + sqrt(n)) . $
+#strong[Fazit]
 
-Der Nenner ist für große $n$:
-$ root(3, n^3 + 2 n) approx root(3, n^3) = n . $
+Wir haben gezeigt, dass ${ a_n }$ eine Cauchy-Folge ist, indem wir die
+Definition einer Cauchy-Folge angewendet und die notwendigen
+Abschätzungen durchgeführt haben.
 
-Somit ergibt sich:
-$ b_n approx frac(1, n + sqrt(n)) / n = frac(1, n (n + sqrt(n))) = frac(1, n^2 + n^(3 \/ 2)) . $
-
-Für $n arrow.r oo$ strebt $frac(1, n^2 + n^(3 \/ 2))$ gegen Null, daher:
-$ lim_(n arrow.r oo) b_n = 0 . $
-
-#heading(level: 2, numbering: none)[Erklärung zu Teil (b)]
-<erklärung-zu-teil-b>
-Wir sollen prüfen, ob die Folge
-$ b_n = frac(sqrt(n^2 + 1) - sqrt(n), root(3, n^3 + 2 n)) $ konvergiert
-und ihren Grenzwert bestimmen.
-
-#strong[Schritt 1: Rationalisierung des Zählers]
-
-Um den Zähler zu vereinfachen, multiplizieren wir Zähler und Nenner mit
-dem konjugierten Ausdruck: $ sqrt(n^2 + 1) + sqrt(n) . $
-
-Dadurch erhalten wir:
-$ (sqrt(n^2 + 1) - sqrt(n)) (sqrt(n^2 + 1) + sqrt(n)) & = (n^2 + 1) - n = n^2 + 1 - n . $
-
-Der Zähler wird somit: $ n^2 - n + 1 . $
-
-#strong[Schritt 2: Vereinfachung des Nenners]
-
-Der Nenner wird durch die Multiplikation zu:
-$ (sqrt(n^2 + 1) + sqrt(n)) root(3, n^3 + 2 n) . $
-
-Für große $n$ gilt: $ sqrt(n^2 + 1) & approx n + frac(1, 2 n) ,\
-root(3, n^3 + 2 n) & approx n + frac(2, 3 n^2) . $
-
-Der Nenner wird daher approximiert zu: $ (n + sqrt(n)) (n) . $
-
-#strong[Schritt 3: Gesamte Approximation]
-
-Setzen wir die approximierten Ausdrücke ein:
-$ b_n approx frac(n^2 - n + 1, (n + sqrt(n)) n) = frac(n^2 - n + 1, n^2 + n^(3 \/ 2)) . $
-
-#strong[Schritt 4: Grenzwertbestimmung]
-
-Teilen wir Zähler und Nenner durch $n^2$:
-$ b_n approx frac(1 - 1 / n + 1 / n^2, 1 + 1 / sqrt(n)) . $
-
-Für $n arrow.r oo$ verschwinden die Terme mit $1 / n$ und $1 / sqrt(n)$:
-$ lim_(n arrow.r oo) b_n = frac(1 - 0 + 0, 1 + 0) = 1 . $
-
-#strong[Schlussfolgerung]
-
-Die Folge $b_n$ ist konvergent mit dem Grenzwert 1.

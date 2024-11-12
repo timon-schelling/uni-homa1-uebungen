@@ -1,3 +1,6 @@
+#import "../template.typ": *
+#show: template
+
 #heading(level: 2, numbering: none)[Lösung]
 <lösung>
 Gegeben sei die Folge ${ a_n }_(n in bb(N))$ definiert durch
