@@ -8,15 +8,15 @@ $ a_1 = sqrt(2) quad upright("und") quad a_(n + 1) = sqrt(2 + a_n) , quad uprigh
 
 Wir untersuchen die Konvergenz der Folge und bestimmen den Grenzwert.
 
-#strong[\1. Monotonie der Folge:]
+#strong[\1. Monotonie zeigen:]
 
 Wir zeigen, dass die Folge monoton wachsend ist, also
 $a_(n + 1) gt.eq a_n$ für alle $n in bb(N)$.
 
-#strong[\2. Beschränktheit der Folge:]
+#strong[\2. Beschränktheit zeigen:]
 
-Wir zeigen auf alternative Weise, dass alle Folgenglieder $a_n < 2$
-sind, also ist die Folge nach oben durch $2$ beschränkt.
+Wir zeigen, dass die Folge nach oben durch $2$ beschränkt ist, also
+$a_n lt.eq 2$ für alle $n in bb(N)$.
 
 #strong[\3. Grenzwert bestimmen:]
 
@@ -25,8 +25,8 @@ $L$ der Grenzwert der Folge. Dann gilt: $ L = sqrt(2 + L) $
 Quadratisieren: $ L^2 = 2 + L quad arrow.r.double quad L^2 - L - 2 = 0 $
 Lösen der quadratischen Gleichung:
 $ L = frac(1 plus.minus sqrt(1 + 8), 2) = frac(1 plus.minus 3, 2) $
-Mögliche Lösungen sind $L = 2$ oder $L = - 1$. Da alle $a_n > 0$ sind,
-ist der Grenzwert $L = 2$.
+Mögliche Lösungen sind $L = 2$ oder $L = - 1$. Da alle Folgenglieder
+$a_n gt.eq sqrt(2) > 0$ sind, ist der Grenzwert $L = 2$.
 
 #heading(level: 2, numbering: none)[Erklärung]
 <erklärung>
@@ -36,7 +36,7 @@ Grenzwert bestimmen. Dazu gehen wir systematisch vor.
 #strong[Schritt 1: Monotonie der Folge]
 
 Wir zeigen, dass die Folge ${ a_n }$ monoton wachsend ist, also dass
-$a_(n + 1) gt.eq a_n$ für alle $n in bb(N)$.
+jedes Folgenglied nicht kleiner als das vorherige ist.
 
 #emph[Beweis:]
 
@@ -45,60 +45,65 @@ $a_(n + 1) gt.eq a_n$ für alle $n in bb(N)$.
 \- #strong[Induktionsannahme:] Angenommen, $a_n gt.eq a_(n - 1)$ für ein
 $n gt.eq 1$.
 
-\- #strong[Induktionsschluss:] Die Funktion $f (x) = sqrt(2 + x)$ ist
-für $x gt.eq 0$ streng monoton steigend, da die Ableitung
-$ f' (x) = frac(1, 2 sqrt(2 + x)) > 0 quad upright("für alle ") x gt.eq 0 . $
-Daher gilt: $ a_(n + 1) = f (a_n) gt.eq f (a_(n - 1)) = a_n . $ Somit
-ist die Folge monoton wachsend.
+\- #strong[Induktionsschluss:]
+$ a_(n + 1) = sqrt(2 + a_n) gt.eq sqrt(2 + a_(n - 1)) = a_n $ Da
+$a_n gt.eq a_(n - 1)$, ist $a_(n + 1) gt.eq a_n$.
+
+#emph[Erklärung:] Die Funktion $f (x) = sqrt(2 + x)$ ist für
+$x gt.eq sqrt(2)$ monoton steigend, da die Ableitung
+$f' (x) = frac(1, 2 sqrt(2 + x)) > 0$ ist.
 
 #strong[Schritt 2: Beschränktheit der Folge]
 
-Wir zeigen auf andere Weise, dass $a_n < 2$ für alle $n in bb(N)$ gilt.
+Wir zeigen, dass alle Folgenglieder $a_n$ kleiner oder gleich $2$ sind.
 
 #emph[Beweis:]
 
-Betrachten wir die Funktion $f (x) = sqrt(2 + x)$. Wir zeigen, dass für
-alle $x < 2$ gilt: $ f (x) < 2 . $
+\- #strong[Anfangswert:] $a_1 = sqrt(2) lt.eq 2$.
 
-#strong[Begründung:]
+\- #strong[Induktionsannahme:] Angenommen, $a_n lt.eq 2$.
 
-\- Für $x < 2$ ist $2 + x < 4$, also
-$ f (x) = sqrt(2 + x) < sqrt(4) = 2 . $
+\- #strong[Induktionsschluss:]
+$ a_(n + 1) = sqrt(2 + a_n) lt.eq sqrt(2 + 2) = sqrt(4) = 2 $ Da
+$a_n lt.eq 2$, folgt $a_(n + 1) lt.eq 2$.
 
-Da $a_1 = sqrt(2) < 2$, gilt: $ a_1 < 2 . $
+#emph[Erklärung:] Da wir stets nur positive Zahlen addieren und die
+Quadratwurzel ziehen, bleibt der Wert unter der oberen Schranke $2$.
 
-Angenommen, $a_n < 2$. Dann folgt aus der Definition der Folge:
-$ a_(n + 1) = sqrt(2 + a_n) < 2 . $
+#strong[Schritt 3: Anwendung des Monotoniekriteriums]
 
-Somit bleiben alle Folgenglieder der Folge unter $2$. Dieses Argument
-erfordert keine vollständige Induktion, sondern nutzt die Eigenschaften
-der Funktion $f (x)$ und den Anfangswert $a_1$.
+Das Monotoniekriterium besagt, dass eine Folge, die monoton wachsend und
+nach oben beschränkt ist, konvergent ist.
 
-#strong[Schritt 3: Konvergenz der Folge]
-
-Da die Folge ${ a_n }$ monoton wachsend und nach oben durch $2$
-beschränkt ist, folgt aus dem Monotoniekriterium, dass die Folge
-konvergent ist.
+#emph[Schlussfolgerung:] Die Folge ${ a_n }$ konvergiert.
 
 #strong[Schritt 4: Bestimmung des Grenzwerts]
 
-Sei $L$ der Grenzwert der Folge, also $lim_(n arrow.r oo) a_n = L$.
+Wir setzen voraus, dass die Folge gegen einen Grenzwert $L$ konvergiert.
 
-Aus der Rekursionsgleichung folgt im Grenzwert: $ L = sqrt(2 + L) . $
+#emph[Gleichung aufstellen:]
+$ lim_(n arrow.r oo) a_n = L quad arrow.r.double quad lim_(n arrow.r oo) a_(n + 1) = L $
+$ upright("Also gilt: ") L = sqrt(2 + L) $
 
-Quadratisieren liefert:
-$ L^2 = 2 + L quad arrow.r.double quad L^2 - L - 2 = 0 . $
+#emph[Quadratisieren:] $ L^2 = 2 + L $
 
-Lösen der quadratischen Gleichung:
-$ L = frac(1 plus.minus sqrt(1 + 8), 2) = frac(1 plus.minus 3, 2) . $
+#emph[Umformen:] $ L^2 - L - 2 = 0 $
 
-Die möglichen Lösungen sind:
-$ L_1 = frac(1 + 3, 2) = 2 , quad L_2 = frac(1 - 3, 2) = - 1 . $
+#emph[Lösen der quadratischen Gleichung:]
+$ L = frac(1 plus.minus sqrt(1 + 8), 2) = frac(1 plus.minus 3, 2) $
+$ upright("Mögliche Lösungen: ") L_1 = frac(1 + 3, 2) = 2 , quad L_2 = frac(1 - 3, 2) = - 1 $
 
-Da alle Folgenglieder $a_n$ positiv sind ($a_n > 0$), ist der Grenzwert
-$L = 2$.
+#emph[Wahl des richtigen Grenzwerts:]
 
-#strong[Schlussfolgerung]
+Da alle Folgenglieder $a_n$ größer als $sqrt(2)$ und somit positiv sind,
+kann der Grenzwert nur $L = 2$ sein.
+
+#strong[Schritt 5: Schlussfolgerung]
 
 Die Folge ${ a_n }$ konvergiert gegen $2$.
+
+#emph[Zusammenfassung:] Durch Nachweis der Monotonie und Beschränktheit
+haben wir die Konvergenz der Folge gezeigt. Die Grenzwertberechnung
+ergab zwei Lösungen, von denen nur die positive aufgrund der
+Eigenschaften der Folge in Frage kommt.
 
