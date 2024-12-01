@@ -65,13 +65,13 @@ Grenzwerte der gegebenen Funktionen.
     $lim_(x arrow.r 2^(-)) f (x) = 6 eq.not 3 = lim_(x arrow.r 2^(+)) f (x)$.
 
     Daher existiert der Grenzwert von $f$ an der Stelle $x = 2$ nicht,
-    und $f$ ist dort unstetig.
+    und $f$ ist dort nicht stetig.
 
   #strong[Zusammenfassung für $f (x)$:]
 
   - $f$ ist an der Stelle $x = - 2$ stetig.
 
-  - $f$ ist an der Stelle $x = 2$ unstetig.
+  - $f$ ist an der Stelle $x = 2$ nicht stetig.
 
   - Die links- und rechtsseitigen Grenzwerte an $x = 2$ sind
     unterschiedlich.
@@ -109,7 +109,7 @@ Grenzwerte der gegebenen Funktionen.
 
     Die Grenzwerte von links und rechts sind unterschiedlich, daher
     existiert der Grenzwert an $x = - 1$ nicht. Außerdem ist $g$ an
-    dieser Stelle unstetig.
+    dieser Stelle nicht stetig.
 
   #strong[An der Stelle $x = 1$:]
 
@@ -138,8 +138,7 @@ Grenzwerte der gegebenen Funktionen.
 
   #strong[Zusammenfassung für $g (x)$:]
 
-  - $g$ ist an der Stelle $x = - 1$ unstetig, da die links- und
+  - $g$ ist an der Stelle $x = - 1$ nicht stetig, da die links- und
     rechtsseitigen Grenzwerte nicht übereinstimmen.
 
   - $g$ ist an der Stelle $x = 1$ stetig.
-
